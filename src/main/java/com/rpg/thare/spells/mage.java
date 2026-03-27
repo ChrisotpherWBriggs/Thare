@@ -2,6 +2,7 @@ package com.rpg.thare.spells;
 import com.rpg.thare.utils.diceRolls;
 import com.rpg.thare.models.poison;
 import com.rpg.thare.models.haste;
+import com.rpg.thare.models.quake;
 public class mage {
     //1st level spells
     public static int fire(int level){
@@ -253,4 +254,53 @@ public class mage {
         }
 
     }
+
+    public static boolean sleep3(int will, int intel){
+        int dc = (int) Math.floor((double) (intel - 10) /2) + 6 + 10;
+        int save = diceRolls.rollD20(1) + will;
+        boolean sleepStat;
+
+        if( save >= dc ){
+            sleepStat = false;
+        } else {
+            sleepStat = true;
+        }
+        return sleepStat;
+    }
+
+    public static quake quake(int ref, boolean kd, int intel){
+        quake q = new quake();
+        int dc = (int) Math.floor((double) (intel - 10) /2) + 6 + 10;
+        int save = diceRolls.rollD20(1) + ref;
+
+        int dmg = diceRolls.rollD6(24);
+
+        if(save < dc){
+            q.setKd(true);
+            q.setDmg(dmg);
+        } else {
+            q.setKd(false);
+            q.setDmg((int) Math.floor((double) dmg/2));
+        }
+        return q;
+    }
+
+    public static poison poison3(boolean pStat, int dmg){
+        poison p = new poison();
+        int percent = diceRolls.rollD100(1);
+        int damage = diceRolls.rollD6(8);
+        boolean stat = pStat;
+        if (percent < 75){
+            stat = true;
+        } else {
+            stat = false;
+        }
+
+        p.setPStat(stat);
+        p.setDmg(damage);
+
+        return p;
+
+    }
+
 }
