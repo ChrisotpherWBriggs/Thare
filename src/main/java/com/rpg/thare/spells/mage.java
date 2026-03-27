@@ -216,4 +216,41 @@ public class mage {
 
     }
 
+    public static boolean blink(boolean blinkStat){
+        if (!blinkStat){
+            blinkStat = true;
+        }
+
+        return blinkStat;
+    }
+
+    public static boolean silence(boolean mute){
+        if (!mute){
+            mute = true;
+        }
+        return mute;
+    }
+    //6th level spells
+
+    public static int lightning3(int level, int ref, int intel){
+        int rays = (int)Math.floor((double) level/4);
+        int atk = 0;
+        int total = 0;
+        atk = rays;
+
+        for(int i = 0; i < atk; i++){
+            int roll = diceRolls.rollD6(6);
+            total = total + roll;
+        }
+
+        int save = diceRolls.rollD20(1) + ref;
+        int dc = (int) Math.floor((double) (intel - 10) /2) + 6 + 10;
+
+        if(save < dc){
+            return total;
+        } else {
+            return (int)Math.floor((double) total/2);
+        }
+
+    }
 }

@@ -9,7 +9,7 @@ public class ThareApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ThareApplication.class, args);
 
-		System.out.println(mage.blizzard(12,6,16));
+		System.out.println(mage.lightning3(12,8,20));
 	}
 
 }
