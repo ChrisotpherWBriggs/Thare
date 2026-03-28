@@ -302,5 +302,93 @@ public class mage {
         return p;
 
     }
+    //7th level spells
+    public static int blizzard3(int ref, int intel){
+        int dc = (int) Math.floor((double) (intel - 10) /2) + 7 + 10;
+        int save = diceRolls.rollD20(1) + ref;
+        int total = diceRolls.rollD6(24);
+        int damage = 0;
+        if (save < dc){
+            damage = total;
+        } else {
+            damage = (int) Math.floor((double) total /2);
+        }
+        return damage;
+    }
 
+    public static boolean over(boolean overStat){
+        if (!overStat){
+            overStat = true;
+        }
+        return overStat;
+    }
+
+    public static boolean blind(boolean blindStat, int intel, int fort){
+        int dc = (int) Math.floor((double) (intel - 10) /2) + 7 + 10;
+        int save = diceRolls.rollD20(1) + fort;
+
+        if(save < dc){
+            blindStat = true;
+        } else {
+            blindStat = false;
+        }
+        return blindStat;
+    }
+
+    public static boolean stone(boolean stoneStat, int intel, int fort){
+        int dc = (int) Math.floor((double) (intel - 10) /2) + 7 + 10;
+        int save = diceRolls.rollD20(1) + fort;
+
+        if(save < dc){
+            stoneStat = true;
+        } else {
+            stoneStat = false;
+        }
+        return stoneStat;
+    }
+    //8th level spells
+
+    public static int flare(int ref, int intel){
+        int dc = (int) Math.floor((double) (intel - 10) /2) + 8 + 10;
+        int save = diceRolls.rollD20(1) + ref;
+        int total = diceRolls.rollD6(30);
+        int damage = 0;
+        if (save < dc){
+            damage = total;
+        } else {
+            damage = (int) Math.floor((double) total /2);
+        }
+        return damage;
+    }
+
+    public static boolean stop(boolean stopStat, int will, int intel){
+        int dc = (int) Math.floor((double) (intel - 10) /2) + 8 + 10;
+        int save = diceRolls.rollD20(1) + will;
+
+        if(save < dc){
+            stopStat = true;
+        } else {
+            stopStat = false;
+        }
+        return stopStat;
+    }
+
+    public static boolean banish(boolean ko, int intel, int will){
+        int dc = (int) Math.floor((double) (intel - 10) /2) + 8 + 10;
+        int save = diceRolls.rollD20(1) + will;
+
+        if(save < dc){
+            ko = true;
+        } else {
+            ko = false;
+        }
+        return ko;
+    }
+
+    public static int negate(int neg, int eLevel){
+        int total = diceRolls.rollD4(2);
+        neg = neg + total;
+
+        return neg;
+    }
 }
