@@ -1,0 +1,45 @@
+package com.rpg.thare.models;
+import lombok.*;
+import com.rpg.thare.models.weapon;
+@Data
+public class character {
+    private String name;
+    private int str;
+    private int dex;
+    private int con;
+    private int intel;
+    private int wis;
+    private int cha;
+    private int ac;
+    private int hp;
+    private int mp;
+    private int maxHp;
+    private int maxMp;
+    private int fort;
+    private int ref;
+    private int will;
+    private int baseAtk;
+    private int[] bab;
+    private int gold;
+    private int neg;
+    private boolean pStat;
+    private boolean blindStat;
+    private boolean stopStat;
+    private boolean ko;
+    private boolean stoneStat;
+    private boolean overStat;
+    private boolean kd;
+    private boolean sleepStat;
+    private boolean mute;
+    private boolean blinkStat;
+    private boolean hStat;
+    private boolean darkStat;
+    private boolean shockStat;
+    private boolean fireStat;
+    private boolean coldStat;
+    private boolean dStat;
+    private boolean bladeStat;
+    private boolean disStat;
+    private weapon weapon;
+    
+}

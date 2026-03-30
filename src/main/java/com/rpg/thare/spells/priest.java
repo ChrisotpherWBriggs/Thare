@@ -291,7 +291,7 @@ public class priest {
         return ko;
     }
 
-    public static int drain(int neg, int eLevel){
+    public static int drain(int neg){
         int total = diceRolls.rollD4(2);
         neg = neg - total;
 
