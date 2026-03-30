@@ -43,5 +43,6 @@ public class character {
     private boolean bladeStat;
     private boolean disStat;
     private weapon weapon;
-
+    private armor armor;
+    private shield shield;
 }
