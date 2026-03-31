@@ -4,6 +4,7 @@ import com.rpg.thare.models.weapon;
 @Data
 public class character {
     private String name;
+    private String race;
     private int level;
     private int xp;
     private int str;
